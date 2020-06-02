@@ -19,5 +19,20 @@ averagePair([], 4) // false
 */
 
 const averagePair = (arr, num) => {
-  
+  let index = 0;
+  for(let i = arr.length - 1; i > 0; i--) {
+    if((arr[i] + arr[index]) / 2 === num) {
+      return true;
+    }
+    if((arr[i] + arr[index]) / 2 < num) {
+      i++;
+      index++;
+      continue;
+    }
+    if((arr[i] + arr[index]) / 2 > num) {
+      continue;
+    }
+
+  }
+  return false;
 }
